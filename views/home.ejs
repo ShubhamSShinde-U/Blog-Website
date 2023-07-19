@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<h1>Home</h1>
+<p> <%= startContent %> </p>
+
+<!-- <p></p> -->
+<% for(var i=0;i< all_post_data.length;i++) {%>
+    <h2><%= all_post_data[i].title %></h2>
+    <% let body_after_truncated = truncateText(all_post_data[i].body,100); %>
+    <p>
+        <%= body_after_truncated %> 
+        <a href="/posts/<%=all_post_data[i].title %>">Read More</a>
+    </p>
+<% } %>
+
+<!-- //alternate way for for loop -->
+<% all_post_data.forEach(function (element) { %>
+    <!-- console.log(element.title)  -->
+<% }) %>
+<%- include("partials/footer") %>
+
+
+
+<% function truncateText(info_blog, maxLength) {%>
+    <%var truncated =info_blog;%>
+    <%if (truncated.length > maxLength) {%>
+        <%truncated = truncated.substr(0,maxLength) + '...';%>
+    <%}%>
+
+    <%return truncated;%>
+<%}%>

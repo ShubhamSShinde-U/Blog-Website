@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+<form action="/" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label" >Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="title_newItem" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="content_newItem" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" >Publish</button>
+    </form>
+<%- include("partials/footer") %>
